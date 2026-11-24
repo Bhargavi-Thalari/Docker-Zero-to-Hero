@@ -1,4 +1,8 @@
-\# Docker Hands-on Practicals 🐳
+\# 🐳 Docker Hands-on Practicals
+
+
+
+\## 📌 Project Overview
 
 
 
@@ -6,19 +10,25 @@ This document showcases my hands-on implementation of Docker concepts as part of
 
 
 
+The practicals cover Docker image creation, container execution, Docker Hub integration, multi-stage builds, distroless images and image-size optimization.
+
+
+
+\---
+
+
+
 \## 1. Docker Image Creation
 
 
 
-\*\*Objective:\*\* Build a custom Docker image using a Dockerfile.
+\### Objective
+
+Build a custom Docker image using a Dockerfile.
 
 
 
-\*\*Concepts Learned:\*\*
-
-
-
-\- Dockerfile instructions
+\### Concepts Covered
 
 \- Base images
 
@@ -32,13 +42,31 @@ This document showcases my hands-on implementation of Docker concepts as part of
 
 \- CMD
 
-
-
-\*\*Screenshot:\*\*
+\- Dockerfile instructions
 
 
 
-the
+\### Command Used
+
+
+
+```bash
+
+docker build -t first-demo-docker-image .
+
+```
+
+
+
+\### Screenshot
+
+
+
+!\[Docker Image Build](examples/first-docker-file/screenshots/docker-image-build.png)
+
+
+
+\---
 
 
 
@@ -46,15 +74,33 @@ the
 
 
 
-Created and executed a Docker container using the custom-built image and verified the application output.
+\### Objective
+
+Run a container using the custom-built Docker image and verify the application output.
 
 
 
-\*\*Screenshot:\*\*
+\### Command Used
 
 
 
+```bash
 
+docker run -it first-demo-docker-image
+
+```
+
+
+
+\### Screenshot
+
+
+
+!\[Container Output](examples/first-docker-file/screenshots/container-output.png)
+
+
+
+\---
 
 
 
@@ -62,25 +108,57 @@ Created and executed a Docker container using the custom-built image and verifie
 
 
 
-Pushed the custom Docker image to Docker Hub and verified the published repository.
+\### Objective
+
+Push the locally built Docker image to Docker Hub and verify the published repository.
 
 
 
-\*\*Screenshots:\*\*
+\### Commands Used
 
 
 
+```bash
+
+docker login
 
 
 
+docker push thalaribhargavi21/first-demo-docker-image:latest
+
+```
 
 
 
+\### Screenshots
 
 
-\*\*Docker Hub Repository:\*\*
 
-\[https://hub.docker.com/r/thalaribhargavi21/first-demo-docker-image](https://hub.docker.com/r/thalaribhargavi21/first-demo-docker-image)
+\*\*Pushing Docker Image to Docker Hub\*\*
+
+
+
+!\[Docker Hub Push](examples/first-docker-file/screenshots/dockerhub-push.png)
+
+
+
+\*\*Docker Hub Repository\*\*
+
+
+
+!\[Docker Hub Repository](examples/first-docker-file/screenshots/dockerhub-repository.png)
+
+
+
+\### Docker Hub Repository
+
+
+
+\[View My Docker Image on Docker Hub](https://hub.docker.com/r/thalaribhargavi21/first-demo-docker-image)
+
+
+
+\---
 
 
 
@@ -88,15 +166,33 @@ Pushed the custom Docker image to Docker Hub and verified the published reposito
 
 
 
-Explored multi-stage Docker builds to understand how build-time dependencies can be separated from runtime dependencies.
+\### Objective
+
+Understand how multi-stage Docker builds separate build-time dependencies from runtime dependencies.
 
 
 
-\*\*Screenshot:\*\*
+\### Concepts Covered
+
+\- Build stages
+
+\- Runtime stages
+
+\- Separating build dependencies
+
+\- Reducing unnecessary image contents
 
 
 
+\### Screenshot – Without Multi-Stage Build
 
+
+
+!\[Without Multi-Stage Build](examples/golang-multi-stage-docker-build/screenshots/without-multistage.png)
+
+
+
+\---
 
 
 
@@ -104,15 +200,31 @@ Explored multi-stage Docker builds to understand how build-time dependencies can
 
 
 
-Practiced building minimal runtime images using distroless images.
+\### Objective
+
+Explore minimal runtime images using distroless images.
 
 
 
-\*\*Screenshot:\*\*
+\### Concepts Covered
+
+\- Minimal container images
+
+\- Reduced runtime dependencies
+
+\- Smaller attack surface
 
 
 
+\### Screenshot
 
+
+
+!\[Distroless Image](examples/golang-multi-stage-docker-build/screenshots/distroless-image.png)
+
+
+
+\---
 
 
 
@@ -120,33 +232,39 @@ Practiced building minimal runtime images using distroless images.
 
 
 
-Compared image sizes from my practical experiments.
+\### Objective
+
+Compare Docker image sizes from the practical experiments.
 
 
 
-| Build Approach            | Observed Image Size |
+| Build Approach | Observed Image Size |
 
-| ------------------------- | ------------------: |
+|---|---:|
 
-| Without Multi-Stage Build |              600 MB |
+| Without Multi-Stage Build | 600 MB |
 
-| Minimal Multi-Stage Build |             2.46 MB |
-
-
-
-\*\*Screenshot:\*\*
+| Minimal Multi-Stage Build | 2.46 MB |
 
 
 
+\### Screenshot
 
 
 
-
-\*Note: Image sizes are based on my practical observations.\*
-
+!\[Docker Image Size Comparison](examples/golang-multi-stage-docker-build/screenshots/image-comparison.png)
 
 
-\## Key Learnings
+
+> \*\*Note:\*\* These are the image sizes observed during my practical implementation.
+
+
+
+\---
+
+
+
+\## 7. Key Learnings
 
 
 
@@ -160,23 +278,9 @@ Compared image sizes from my practical experiments.
 
 \- Exploring distroless images.
 
-\- Comparing Docker image sizes and optimization techniques.
+\- Comparing Docker image sizes.
 
-
-
-\## Tools and Technologies Used
-
-
-
-\- Docker Engine
-
-\- Docker Hub
-
-\- Kali Linux
-
-\- Git
-
-\- GitHub
+\- Understanding container image optimization.
 
 
 
@@ -184,7 +288,41 @@ Compared image sizes from my practical experiments.
 
 
 
-\*\*Learning by doing!\*\* This is part of my continuous journey towards building practical DevOps skills.
+\## 8. Tools and Technologies Used
 
 
+
+| Tool | Purpose |
+
+|---|---|
+
+| Docker Engine | Building and running containers |
+
+| Docker Hub | Storing and sharing Docker images |
+
+| Kali Linux | Practical environment |
+
+| Git | Version control |
+
+| GitHub | Project hosting and documentation |
+
+
+
+\---
+
+
+
+\## Conclusion
+
+
+
+These hands-on exercises helped me understand Docker fundamentals, containerization, Docker image creation and image optimization.
+
+
+
+This is part of my continuous journey towards learning DevOps and cloud technologies.
+
+
+
+\*\*Learning by doing! 🚀\*\*
 
