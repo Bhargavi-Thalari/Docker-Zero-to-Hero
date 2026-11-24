@@ -158,8 +158,6 @@ Compare Docker image sizes from the practical experiments.
 ## Conclusion
 
 These hands-on exercises helped me understand Docker fundamentals, containerization, Docker image creation and image optimization.
-
 This is part of my continuous journey towards learning DevOps and cloud technologies.
-
-**Learning by doing! 🚀**
+**Learning by doing! **
 
